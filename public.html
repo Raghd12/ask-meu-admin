@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ask-MEU - Public Q&A</title>
+</head>
+<body>
+    <h2>Ask-MEU</h2>
+
+   
+    <p><strong>Q:</strong> Where can I pay tuition?</p>
+    <p id="answerText"><strong>A:</strong> You can pay at the finance office in Building A.</p>
+
+    
+    <div id="feedbackSection" style="margin-top: 20px;">
+        <p>Was this helpful?</p>
+        <button onclick="submitFeedback('yes')">👍 Yes</button>
+        <button onclick="submitFeedback('no')">👎 No</button>
+        <p id="feedbackMessage" style="color: green;"></p>
+    </div>
+
+    <script>
+        function submitFeedback(response) {
+            document.getElementById('feedbackMessage').innerText = "Thank you for your feedback!";
+            console.log("User feedback: " + response);
+        }
+    </script>
+</body>
+</html>
