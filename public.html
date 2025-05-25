@@ -19,10 +19,22 @@
     </div>
 
     <script>
-        function submitFeedback(response) {
-            document.getElementById('feedbackMessage').innerText = "Thank you for your feedback!";
-            console.log("User feedback: " + response);
-        }
+       function submitFeedback(response) {
+    document.getElementById('feedbackMessage').innerText = "Thank you for your feedback!";
+
+    // نرسل الرد إلى API (وهمي)
+    fetch('https://example.com/save-feedback', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ feedback: response })
+    }).then(res => {
+        console.log("Feedback saved:", response);
+    }).catch(err => {
+        console.error("Error saving feedback:", err);
+    });
+}
     </script>
 </body>
 </html>
